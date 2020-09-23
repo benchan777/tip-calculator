@@ -15,10 +15,12 @@ const minusOneTip = document.querySelector('#minus-tip')
 const plusOnePerson = document.querySelector('#plus-person')
 const minusOnePerson = document.querySelector('#minus-person')
 
-// event listeners 
+// input event listeners 
 billInput.addEventListener('input', calculateTip)
 tipInput.addEventListener('input', calculateTip)
 peopleInput.addEventListener('input', calculateTip)
+
+// click event listeners
 plusOneBill.addEventListener('click', addOneBill)
 plusOneBill.addEventListener('click', calculateTip)
 minusOneBill.addEventListener('click', subtractOneBill)
@@ -37,11 +39,32 @@ calculateTip()
 // This function calculates the tip
 function calculateTip() {
     const billValue = parseFloat(billInput.value)
-        if(billValue < 0 ) {
+        if(billValue < 0 ) { // alerts user that they can't enter a negative number
             alert("You can't input a negative number!")
+                while(billInput.value < 0) { // adds one to the user input until it isn't negative anymore
+                    let number = parseFloat(billInput.value)
+                    number += 1.00
+                    billInput.value = parseFloat(number)
+                }
         }
     const tipValue = parseFloat(tipInput.value)
+        if(tipValue < 0) { // alerts user that they can't enter a negative number
+            alert("You can't input a negative number!")
+                while(tipInput.value < 0) { // adds one to the user input until it isn't negative anymore
+                    let number = parseFloat(tipInput.value)
+                    number += 1.00
+                    tipInput.value = parseFloat(number)
+                }
+        }
     const peopleValue = parseInt(peopleInput.value)
+        if(peopleValue < 0) { // alerts user that they can't enter a negative number
+            alert("You can't input a negative number!")
+                while(peopleInput.value < 0) { // adds one to the user input until it isn't negative anymore
+                    let number = parseInt(peopleInput.value)
+                    number += 1
+                    peopleInput.value = parseInt(number)
+                }
+        }
 
     const tipAmount = billValue * tipValue / 100
     const totalAmount = billValue + tipAmount
@@ -65,6 +88,10 @@ function addOneBill() {
 function subtractOneBill() {
     let quantity = parseFloat(billInput.value)
     quantity -= 1.00;
+        if(quantity < 0) {
+            alert("You can't have a negative bill!")
+            quantity += 1.00
+        }
     billInput.value = parseFloat(quantity)
 }
 
