@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(22, 44, 58);
+}
+
+h1 {
+    color: rgb(217, 124, 80);
+    font-size: 50px;
+}
+
+p, div, input {
+    color: rgb(219, 169, 136);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20vh 0 0 0;
+}
+
+input {
+    border-width: 5px;
+    border-color: rgb(217, 124, 80);
+    border-radius: 1em;
+    padding: 0.7em;
+    margin: 1em;
+}
+
+.item {
+    display: flex;
+    font-size: 20px;
+}
