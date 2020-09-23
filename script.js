@@ -37,6 +37,9 @@ calculateTip()
 // This function calculates the tip
 function calculateTip() {
     const billValue = parseFloat(billInput.value)
+        if(billValue < 0 ) {
+            alert("You can't input a negative number!")
+        }
     const tipValue = parseFloat(tipInput.value)
     const peopleValue = parseInt(peopleInput.value)
 
@@ -68,27 +71,35 @@ function subtractOneBill() {
 // add one to the tip
 function addOneTip() {
     let quantity = parseFloat(tipInput.value)
-    quantity += 1.00;
+    quantity += 1.00
     tipInput.value = parseFloat(quantity)
 }
 
 // subtract one from the ip
 function subtractOneTip() {
     let quantity = parseFloat(tipInput.value)
-    quantity -= 1.00;
+    quantity -= 1.00
+        if(quantity < 0) {
+            alert("You can't have negative tip!")
+            quantity += 1.00
+        }
     tipInput.value = parseFloat(quantity)
 }
 
 // add one person
 function addOnePerson() {
     let quantity = parseFloat(peopleInput.value)
-    quantity += 1.00;
+    quantity += 1.00
     peopleInput.value = parseFloat(quantity)
 }
 
 // subtract one person
 function subtractOnePerson() {
     let quantity = parseFloat(peopleInput.value)
-    quantity -= 1.00;
+    quantity -= 1.00
+        if(quantity <= 0) {
+            alert("You can't have 0 people!")
+            quantity += 1.00
+        }
     peopleInput.value = parseFloat(quantity)
 }
