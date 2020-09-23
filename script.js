@@ -1,5 +1,8 @@
 const display = document.querySelector('#display')
 const displayTotal = document.querySelector('#total-amount')
+const displayTotalPerPerson = document.querySelector('#per-person-price')
+const displayTipTotalPerPerson = document.querySelector('#per-person-tip')
+
 const billInput = document.querySelector('#bill')
 const tipInput = document.querySelector('#tip')
 const peopleInput = document.querySelector('#people')
@@ -15,9 +18,13 @@ function calculateTip() {
     const tipValue = parseFloat(tipInput.value)
     const peopleValue = parseInt(peopleInput.value)
 
-    const tipAmount = billValue * tipValue / 100 / peopleValue
+    const tipAmount = billValue * tipValue / 100
     const totalAmount = billValue + tipAmount
+    const perPersonTip = tipAmount / peopleValue
+    const amountPerPerson = totalAmount / peopleValue
 
     display.innerHTML = tipAmount.toFixed(2)
     displayTotal.innerHTML = totalAmount.toFixed(2)
+    displayTipTotalPerPerson.innerHTML = perPersonTip.toFixed(2)
+    displayTotalPerPerson.innerHTML = amountPerPerson.toFixed(2)
 }

@@ -12,10 +12,14 @@ p, div, input {
 }
 
 main {
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(217, 124, 80);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20vh 0 0 0;
+    margin: 15vh 20% 0 20%;
+    padding: 0 0 40px 0;
 }
 
 input {
@@ -29,4 +33,23 @@ input {
 .item {
     display: flex;
     font-size: 20px;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+}
+
+.outputs {
+    display: flex;
+}
+
+.output-total {
+    margin: 0 5vh 0 0;
+}
+
+.output-per-person {
+    margin: 0 0 0 5vh;
 }
