@@ -1,17 +1,20 @@
+// display 
 const display = document.querySelector('#display')
 const displayTotal = document.querySelector('#total-amount')
 const displayTotalPerPerson = document.querySelector('#per-person-price')
 const displayTipTotalPerPerson = document.querySelector('#per-person-tip')
 
+// inputs
 const billInput = document.querySelector('#bill')
 const tipInput = document.querySelector('#tip')
 const peopleInput = document.querySelector('#people')
 
-calculateTip()
+// event listeners 
 billInput.addEventListener('input', calculateTip)
 tipInput.addEventListener('input', calculateTip)
 peopleInput.addEventListener('input', calculateTip)
 
+calculateTip()
 // This function calculates the tip
 function calculateTip() {
     const billValue = parseFloat(billInput.value)
