@@ -51,36 +51,42 @@ function calculateTip() {
     displayTotalPerPerson.innerHTML = '$' + amountPerPerson.toFixed(2)
 }
 
+// add one to the bill
 function addOneBill() {
     let quantity = parseFloat(billInput.value)
     quantity += 1.00;
     billInput.value = parseFloat(quantity)
 }
 
+// subtract one from the bill
 function subtractOneBill() {
     let quantity = parseFloat(billInput.value)
     quantity -= 1.00;
     billInput.value = parseFloat(quantity)
 }
 
+// add one to the tip
 function addOneTip() {
     let quantity = parseFloat(tipInput.value)
     quantity += 1.00;
     tipInput.value = parseFloat(quantity)
 }
 
+// subtract one from the ip
 function subtractOneTip() {
     let quantity = parseFloat(tipInput.value)
     quantity -= 1.00;
     tipInput.value = parseFloat(quantity)
 }
 
+// add one person
 function addOnePerson() {
     let quantity = parseFloat(peopleInput.value)
     quantity += 1.00;
     peopleInput.value = parseFloat(quantity)
 }
 
+// subtract one person
 function subtractOnePerson() {
     let quantity = parseFloat(peopleInput.value)
     quantity -= 1.00;
