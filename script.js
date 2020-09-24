@@ -14,6 +14,7 @@ const plusOneTip = document.querySelector('#plus-tip')
 const minusOneTip = document.querySelector('#minus-tip')
 const plusOnePerson = document.querySelector('#plus-person')
 const minusOnePerson = document.querySelector('#minus-person')
+// const resetInput = document.querySelector('#reset-button')
 
 // input event listeners 
 billInput.addEventListener('input', calculateTip)
@@ -33,6 +34,7 @@ plusOnePerson.addEventListener('click', addOnePerson)
 plusOnePerson.addEventListener('click', calculateTip)
 minusOnePerson.addEventListener('click', subtractOnePerson)
 minusOnePerson.addEventListener('click', calculateTip)
+// resetInput.addEventListener('click', resetFields)
 
 calculateTip()
 
@@ -130,3 +132,8 @@ function subtractOnePerson() {
         }
     peopleInput.value = parseFloat(quantity)
 }
+
+// doesn't work, not sure why yet
+// function resetFields() {
+//     document.getElementById("bill").reset()
+// }
